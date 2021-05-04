@@ -19,6 +19,17 @@ function App(){
     setTodos(newTodos);
   }
 
+  const completeTodo = index => {
+    let temp = [...todos];
+    todos.find((value, i) => {
+      if (i === index) {
+        const completeTodo = {text: value.text, isCompleted: true};
+        temp.splice(index, 1, completeTodo);
+        setTodos(temp);
+      }
+    });
+  }
+
   const removeTodo = index => {
     let temp = [...todos];
     temp.splice(index, 1);
@@ -31,7 +42,7 @@ function App(){
     <TodoForm addTodo={addTodo}/>
     <div className="todo-list">
       {todos.map((todo, i) => 
-        <Todo index={i} key={i} todo={todo} remove={removeTodo}/>)}
+        <Todo index={i} key={i} todo={todo} remove={removeTodo} complete={completeTodo}/>)}
           </div>
     </div>
     </>);

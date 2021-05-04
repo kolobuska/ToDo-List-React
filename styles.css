@@ -88,6 +88,10 @@ h1 {
   width: 90%;
 }
 
+.completed {
+  text-decoration: line-through;
+}
+
 .todo-row:nth-child(4n + 1) {
   background: linear-gradient(
     90deg,
@@ -120,6 +124,11 @@ h1 {
 }
 
 .delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.Complete-icon {
   margin-right: 5px;
   color: #fff;
 }
